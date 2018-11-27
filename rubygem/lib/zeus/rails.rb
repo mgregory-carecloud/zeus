@@ -151,7 +151,9 @@ module Zeus
           if (3..4).include?(::Rails::VERSION::MAJOR)
             require 'rails/console/app'
             require 'rails/console/helpers'
-            TOPLEVEL_BINDING.eval('self').extend ::Rails::ConsoleMethods
+            if defined?(::Rails::ConsoleMethods)
+              TOPLEVEL_BINDING.eval('self').extend ::Rails::ConsoleMethods
+            end
           end
 
           Pry.start
