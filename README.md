@@ -1,5 +1,16 @@
 # Zeus
 
+**NOTE: This version of Zeus works with CareCloud webservices**
+If you have an issue with the gem `method_source`, it is because Zeus uses version 0.8.2 and pry uses 0.9.0. Normally bundler could handle this, but
+Zeus is intentionally designed to work outside of bundler.
+
+To fix the issue, run:
+```bash
+$ gem uninstall method_source -v 0.9.0
+```
+
+You may also need to uninstall other newer versions of `method_source` if you happen to have them.
+
 [![Join the chat at https://gitter.im/zeus-application-preloader/Lobby](https://badges.gitter.im/zeus-application-preloader/Lobby.svg)](https://gitter.im/zeus-application-preloader/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/burke/zeus.svg?branch=master)](https://travis-ci.org/burke/zeus)
 
